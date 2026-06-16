@@ -1,43 +1,83 @@
-# phoenix
+# Phoenix Program Integration (External Smart Contract)
 
-Phoenix Legacy is an on-chain orderbook that operates without a crank.
+## Overview
 
-### Documentation
+Scotty Pumpkin (SPUMP) integrates with **Phoenix Legacy**, an on-chain order book protocol built on Solana. Phoenix operates as a fully on-chain decentralized exchange (DEX) that enables atomic trade settlement without requiring an off-chain crank.
 
-Documentation and instructions on how to interact with the program are available on [GitBook](https://ellipsis-labs.gitbook.io/phoenix-dex/tRIkEFlLUzWK9uKO3W2V/getting-started/phoenix-overview).
+>  **Important:** Phoenix is **not developed or owned by this project**. It is an external Solana program developed by Ellipsis Labs that this token interacts with.
 
-### Licensing
+---
 
-The primary license for Phoenix Legacy is the MIT License (`MIT`), which can be found at [`LICENSE`](https://github.com/Ellipsis-Labs/phoenix-v1/blob/master/LICENSE).
+## About Phoenix
 
-### Audits
+Phoenix Legacy is a Solana program (smart contract) that provides:
 
-Phoenix Legacy has been audited by OtterSec. The audit report can be found at [audits/OtterSec.pdf](https://github.com/Ellipsis-Labs/phoenix-v1/blob/master/audits/OtterSec.pdf).
+* Fully on-chain central limit order book (CLOB)
+* Deterministic and atomic trade execution
+* No crank or external keeper dependency
+* High-performance trading primitives on Solana
 
-### Bug Bounty
+This project uses Phoenix as part of its ecosystem for liquidity and/or trading functionality.
 
-Information on the bug bounty program for Phoenix Legacy can be found at [SECURITY.md](https://github.com/Ellipsis-Labs/phoenix-v1/blob/master/SECURITY.md).
+---
 
-### Build Verification
+## Official Repository
 
-You can use [Solana Verify CLI](https://github.com/Ellipsis-Labs/solana-verifiable-build) to verify that the program deployed at `PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY` matches the code in this repository. After installing the CLI, run:
+The official Phoenix v1 source code is available here:
 
+* https://github.com/Ellipsis-Labs/phoenix-v1
+
+---
+
+## Program Details
+
+* **Program Name:** Phoenix Legacy
+* **Program ID:** `PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY`
+* **Network:** Solana Mainnet
+
+---
+
+## Build Verification
+
+To verify that the deployed Phoenix program matches the official source code, use the Solana Verify CLI:
+
+```bash
+solana-verify verify-from-repo -um \
+  --program-id PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY \
+  https://github.com/Ellipsis-Labs/phoenix-v1
 ```
-solana-verify verify-from-repo -um --program-id PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY https://github.com/Ellipsis-Labs/phoenix-v1
-```
 
-This may take awhile as it builds the program inside Docker, then verifies that the build hash matches the deployed program hash. The verification process is much faster on a non-ARM machine.
+This process builds the program and checks that the resulting binary matches the on-chain deployment.
 
-### Building and Testing Locally
+---
 
-To build the contract, run:
+## Documentation
 
-```
-./build.sh
-```
+Official documentation and integration guides are available via Phoenix GitBook:
 
-To run the tests, run:
+* Refer to the Phoenix documentation for instructions on interacting with the program
 
-```
-./test.sh
-```
+---
+
+## Audits
+
+Phoenix Legacy has undergone security auditing:
+
+* Auditor: OtterSec
+* Audit report available in the official repository (`audits/OtterSec.pdf`)
+
+---
+
+## License
+
+Phoenix Legacy is licensed under the MIT License. See the official repository for details.
+
+---
+
+## Disclaimer
+
+This repository does **not** include or claim ownership of the Phoenix program. All rights, code, and responsibilities belong to the original developers (Ellipsis Labs).
+
+This project only interacts with the deployed Phoenix program for protocol-level functionality.
+
+---
